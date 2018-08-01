@@ -1,0 +1,111 @@
+<!--
+  Generated template for the AddCharacterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+   <ion-navbar>
+      <ion-title>{{ pageTitle }}</ion-title>
+   </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+   <div>
+      <ion-item *ngIf="isEdited && !hideForm">
+         <button
+            ion-button
+            item-right
+            color="secondary"
+            text-center
+            block
+            (click)="deleteEntry()">Remove this Entry?</button>
+      </ion-item>
+
+
+      <div *ngIf="hideForm">
+         <ion-item class="post-entry-message" text-wrap>
+            <h2>Success!</h2>
+            <p>Maybe you'd like to edit an existing entry or add a new record?</p>
+            <p>Simply go back to the home page and select the option you want to pursue.</p>
+         </ion-item>
+      </div>
+
+
+      <div *ngIf="!hideForm">
+         <form [formGroup]="form" (ngSubmit)="saveEntry()">
+
+            <ion-list>
+               <ion-item-group>
+                  <ion-item-divider color="light">Char Name *</ion-item-divider>
+                  <ion-item>
+                     <ion-input type="text" placeholder="Enter a name..." formControlName="name" [(ngModel)]="charName"></ion-input>
+                  </ion-item>
+               </ion-item-group>
+
+               <ion-item-group>
+                  <ion-item-divider color="light">Stars *</ion-item-divider>
+                  <ion-item>
+                    <ion-select formControlName="stars" [(ngModel)]=cdStars>
+                      <ion-option *ngFor="let star of stars" value="{{star.cd_star}}">{{star.qt_star}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+               </ion-item-group>
+
+               <ion-item-group radio-group>
+                <ion-item-divider color="light">Stars *</ion-item-divider>
+                <table>
+                  <tr *ngFor="let star of stars">
+                    <td>
+                      <div *ngIf="star.qt_star>=1" id="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=2" id="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=3" id="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=4" id="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=5" id="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=6" id="star-{{star.nm_color_star}}"></div>
+                    </td>
+                    <td>
+                      <ion-radio value="{{star.cd_star}}"></ion-radio>
+                    </td>
+                  </tr>
+                </table>  
+             </ion-item-group>
+               
+               <ion-item-group>
+                  <ion-item-divider color="light">Attribute * <img *ngIf="nmAttribute!=undefined" src="assets/imgs/attributes/{{nmAttribute}}.png"></ion-item-divider>
+                  <ion-item>
+                     <ion-select formControlName="attribute" [(ngModel)]=cdAttribute (ionChange)="changeAttribute($event)">
+                        <ion-option *ngFor="let attribute of attributes" value="{{attribute.cd_attribute}}">{{attribute.nm_attribute}}</ion-option>
+                     </ion-select>
+                  </ion-item>
+               </ion-item-group>
+
+               <ion-item-group>
+                  <ion-item-divider color="light">Quant. *</ion-item-divider>
+                  <ion-item>
+                     <ion-input type="number" step="1" placeholder="Quant." formControlName="quant" [(ngModel)]="qtChar"></ion-input>
+                  </ion-item>
+               </ion-item-group>
+
+
+
+               <ion-item>
+                  <button
+                     ion-button
+                     color="primary"
+                     text-center
+                     block
+                     [disabled]="!form.valid">Save Entry</button>
+               </ion-item>
+
+            </ion-list>
+
+         </form>
+      </div>
+   </div>
+
+
+</ion-content>

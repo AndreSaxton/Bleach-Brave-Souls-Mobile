@@ -1,0 +1,130 @@
+page-add-character {
+}
+
+#star-Golden {
+	margin: 0px;
+	position: relative;
+	display: block;
+	color: goldenrod;
+	width: 0;
+	height: 0;
+	border-right:  10px solid transparent;
+	border-bottom: 7px  solid goldenrod;
+	border-left:   10px solid transparent;
+	transform:    rotate(35deg);
+
+	float: left;
+ }
+ #star-Golden:before {
+	border-bottom: 8px solid goldenrod;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -4.5px;
+	left: -6.5px;
+	display: block;
+	content: '';
+	transform:      rotate(-35deg);
+ 
+ }
+ #star-Golden:after {
+	position: absolute;
+	display: block;
+	color: goldenrod;
+	top: 0.3px;
+	left: -10.5px;
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-bottom: 7px solid goldenrod;
+	border-left: 10px solid transparent;
+	transform:      rotate(-70deg);
+	content: '';
+ }
+
+ #star-Purple {
+	margin: 0px;
+	position: relative;
+	display: block;
+	color: purple;
+	width: 0;
+	height: 0;
+	border-right:  10px solid transparent;
+	border-bottom: 7px  solid purple;
+	border-left:   10px solid transparent;
+	transform:    rotate(35deg);
+
+	float: left;
+ }
+ #star-Purple:before {
+	border-bottom: 8px solid purple;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -4.5px;
+	left: -6.5px;
+	display: block;
+	content: '';
+	transform:      rotate(-35deg);
+ 
+ }
+ #star-Purple:after {
+	position: absolute;
+	display: block;
+	color: purple;
+	top: 0.3px;
+	left: -10.5px;
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-bottom: 7px solid purple;
+	border-left: 10px solid transparent;
+	transform:      rotate(-70deg);
+	content: '';
+ }
+ #star-Silver {
+	margin: 0px;
+	position: relative;
+	display: block;
+	color: silver;
+	width: 0;
+	height: 0;
+	border-right:  10px solid transparent;
+	border-bottom: 7px  solid silver;
+	border-left:   10px solid transparent;
+	transform:    rotate(35deg);
+
+	float: left;
+ }
+ #star-Silver:before {
+	border-bottom: 8px solid silver;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -4.5px;
+	left: -6.5px;
+	display: block;
+	content: '';
+	transform:      rotate(-35deg);
+ 
+ }
+ #star-Silver:after {
+	position: absolute;
+	display: block;
+	color: silver;
+	top: 0.3px;
+	left: -10.5px;
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-bottom: 7px solid silver;
+	border-left: 10px solid transparent;
+	transform:      rotate(-70deg);
+	content: '';
+ }
