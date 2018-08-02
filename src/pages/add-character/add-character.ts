@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { style } from '../../../node_modules/@angular/core/src/animation/dsl';
 
 @IonicPage()
 @Component({
@@ -103,6 +104,8 @@ export class AddCharacterPage {
       let headers 	: any		= new HttpHeaders({ 'Content-Type': 'application/json' }),
           options 	: any		= { "key" : "create", "name" : name, "quant" : quant, "star" : star, "attribute" : attribute },
           url       : any      	= this.baseURI + "manage-data-chars.php";
+
+          console.log(options);
 
       this.http.post(url, JSON.stringify(options), headers)
       .subscribe((data : any) =>
@@ -220,15 +223,34 @@ export class AddCharacterPage {
       });  
   }
 
+  public oldAttChoice = 1;
   changeAttribute(attribute){
     //console.log(attribute);
     let cd_attribute = parseInt(attribute);
     console.log(cd_attribute);
-    console.log(this.attributes[cd_attribute-1].cd_attribute);
-    console.log(this.attributes[cd_attribute-1].nm_attribute);
+    /*console.log(this.attributes[cd_attribute-1].cd_attribute);
+    console.log(this.attributes[cd_attribute-1].nm_attribute);*/
+
+    document.getElementById("tdAtt"+this.oldAttChoice).style.backgroundColor = "white";
+    document.getElementById("tdAtt"+cd_attribute).style.backgroundColor = "black";    
+    this.oldAttChoice = cd_attribute;
 
     this.nmAttribute = this.attributes[cd_attribute-1].nm_attribute;
+    this.cdAttribute = cd_attribute;
   }
 
+  public oldStarChoice = "1";
+  changeStar(cdStar){
+    /*console.log(cdStar);
+    console.log(this.oldStarChoice);*/
+    document.getElementById(this.oldStarChoice).style.backgroundColor="white";
+    document.getElementById(cdStar).style.backgroundColor="black";
+    this.oldStarChoice = cdStar;
+
+    //console.log(cdStar);
+    //this.form.controls["stars"] = cdStar;
+    //document.getElementById("cdStars").innerHTML = cdStar;
+    this.cdStars = cdStar;
+  }
 
 }

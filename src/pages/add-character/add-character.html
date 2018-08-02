@@ -46,41 +46,50 @@
                   </ion-item>
                </ion-item-group>
 
-               <ion-item-group>
+               <!--ion-item-group>
                   <ion-item-divider color="light">Stars *</ion-item-divider>
                   <ion-item>
                     <ion-select formControlName="stars" [(ngModel)]=cdStars>
                       <ion-option *ngFor="let star of stars" value="{{star.cd_star}}">{{star.qt_star}}</ion-option>
                     </ion-select>
                   </ion-item>
-               </ion-item-group>
+               </ion-item-group-->
 
                <ion-item-group radio-group>
                 <ion-item-divider color="light">Stars *</ion-item-divider>
                 <table>
-                  <tr *ngFor="let star of stars">
-                    <td>
-                      <div *ngIf="star.qt_star>=1" id="star-{{star.nm_color_star}}"></div>
-                      <div *ngIf="star.qt_star>=2" id="star-{{star.nm_color_star}}"></div>
-                      <div *ngIf="star.qt_star>=3" id="star-{{star.nm_color_star}}"></div>
-                      <div *ngIf="star.qt_star>=4" id="star-{{star.nm_color_star}}"></div>
-                      <div *ngIf="star.qt_star>=5" id="star-{{star.nm_color_star}}"></div>
-                      <div *ngIf="star.qt_star>=6" id="star-{{star.nm_color_star}}"></div>
-                    </td>
-                    <td>
-                      <ion-radio value="{{star.cd_star}}"></ion-radio>
+                  <tr *ngFor="let star of stars" style="height: 20px;">
+                    <td id="{{star.cd_star}}" (click)="changeStar(star.cd_star)">
+                      <div *ngIf="star.qt_star>=1" class="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=2" class="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=3" class="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=4" class="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=5" class="star-{{star.nm_color_star}}"></div>
+                      <div *ngIf="star.qt_star>=6" class="star-{{star.nm_color_star}}"></div>
                     </td>
                   </tr>
-                </table>  
+                </table>
+                <input type="hidden" formControlName="stars" [(ngModel)]=cdStars id="cdStars"/>
              </ion-item-group>
                
-               <ion-item-group>
+               <!--ion-item-group>
                   <ion-item-divider color="light">Attribute * <img *ngIf="nmAttribute!=undefined" src="assets/imgs/attributes/{{nmAttribute}}.png"></ion-item-divider>
                   <ion-item>
                      <ion-select formControlName="attribute" [(ngModel)]=cdAttribute (ionChange)="changeAttribute($event)">
                         <ion-option *ngFor="let attribute of attributes" value="{{attribute.cd_attribute}}">{{attribute.nm_attribute}}</ion-option>
                      </ion-select>
                   </ion-item>
+               </ion-item-group-->
+               <ion-item-group>
+                  <ion-item-divider color="light">Attribute *</ion-item-divider>                  
+                    <table id="tbAtt">
+                      <tr>
+                        <td *ngFor="let attribute of attributes" id="tdAtt{{attribute.cd_attribute}}" (click)="changeAttribute(attribute.cd_attribute)">
+                            <img src="assets/imgs/attributes/{{attribute.nm_attribute}}.png">
+                        </td>
+                      </tr>
+                    </table>
+                    <input type="hidden" formControlName="attribute" [(ngModel)]=cdAttribute id="cdAttribute"/>
                </ion-item-group>
 
                <ion-item-group>

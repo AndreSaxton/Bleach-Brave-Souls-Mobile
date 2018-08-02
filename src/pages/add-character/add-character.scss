@@ -1,7 +1,7 @@
 page-add-character {
 }
 
-#star-Golden {
+.star-Golden {
 	margin: 0px;
 	position: relative;
 	display: block;
@@ -15,7 +15,7 @@ page-add-character {
 
 	float: left;
  }
- #star-Golden:before {
+ .star-Golden:before {
 	border-bottom: 8px solid goldenrod;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
@@ -29,7 +29,7 @@ page-add-character {
 	transform:      rotate(-35deg);
  
  }
- #star-Golden:after {
+ .star-Golden:after {
 	position: absolute;
 	display: block;
 	color: goldenrod;
@@ -44,7 +44,7 @@ page-add-character {
 	content: '';
  }
 
- #star-Purple {
+ .star-Purple {
 	margin: 0px;
 	position: relative;
 	display: block;
@@ -58,7 +58,7 @@ page-add-character {
 
 	float: left;
  }
- #star-Purple:before {
+ .star-Purple:before {
 	border-bottom: 8px solid purple;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
@@ -72,7 +72,7 @@ page-add-character {
 	transform:      rotate(-35deg);
  
  }
- #star-Purple:after {
+ .star-Purple:after {
 	position: absolute;
 	display: block;
 	color: purple;
@@ -86,7 +86,7 @@ page-add-character {
 	transform:      rotate(-70deg);
 	content: '';
  }
- #star-Silver {
+ .star-Silver {
 	margin: 0px;
 	position: relative;
 	display: block;
@@ -100,7 +100,7 @@ page-add-character {
 
 	float: left;
  }
- #star-Silver:before {
+ .star-Silver:before {
 	border-bottom: 8px solid silver;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
@@ -114,7 +114,7 @@ page-add-character {
 	transform:      rotate(-35deg);
  
  }
- #star-Silver:after {
+ .star-Silver:after {
 	position: absolute;
 	display: block;
 	color: silver;
