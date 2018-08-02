@@ -32,7 +32,7 @@ export class HomePage {
    load() : void
    {   
       this.http
-      .get('http://localhost/bleach_brave_souls/retrieve-data-chars.php')
+      .get('http://localhost/bleach_brave_souls/retrieve-data-material.php')
       .subscribe((data : any) =>
       {
          //console.dir(data);
