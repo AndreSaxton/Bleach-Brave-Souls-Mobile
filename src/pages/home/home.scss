@@ -1,22 +1,31 @@
 page-home {
 }
 td, th{
-	border: 1px solid black;background-color: #ffffff;
+	border: 1px solid black;
+	background-color: #ffffff;
+	max-height: 50px;
 }
 td{
 	text-align: center;
 	padding: 0px 2px;
 }
-td#charMat:hover ~ #infoMat,
-td#charBase:hover ~ #infoBase { visibility: visible;}
-#infoMat, #infoBase{
+//td#charMat:hover ~ #infoMat{ visibility: visible;}
+#infoMat{
 	visibility: hidden;
-	position: relative;
-	top: 100px;
+	position: absolute;
+	width: 50%;
+	height: auto;
+	background-color: gray;
+	z-index: 2;
+}
+#nmMat, #infoMat #btn{
+	text-align: center;	
 }
 #imgMat{
-	height: 100px;
-	width: 100px;
+	min-height: 100px;
+	min-width: 100px;
+	height: 70%;
+	width: 70%;
 	background-color: cyan;
 }
 

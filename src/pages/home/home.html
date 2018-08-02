@@ -22,50 +22,36 @@
     <button ion-button (click)="addMaterials()">Add Material Needed</button>
   </div>
 
+  <div id="infoMat">
+      <div id="nmMat">{{mat.nmMat}}</div><br/>
+      <div id="imgMat">Foto Aqui</div><br/>
+      <div id="starMat">
+          <div *ngIf="mat.qt_star>=1" id="star-{{mat.nm_color_star}}"></div>
+          <div *ngIf="mat.qt_star>=2" id="star-{{mat.nm_color_star}}"></div>
+          <div *ngIf="mat.qt_star>=3" id="star-{{mat.nm_color_star}}"></div>
+          <div *ngIf="mat.qt_star>=4" id="star-{{mat.nm_color_star}}"></div>
+          <div *ngIf="mat.qt_star>=5" id="star-{{mat.nm_color_star}}"></div>
+          <div *ngIf="mat.qt_star>=6" id="star-{{mat.nm_color_star}}"></div>
+      </div>
+      <br/>
+      <div id="qtMat">Quant.: {{ mat.qtCharMat }}</div>
+      <br/>
+      <div id="btn"><button ion-button (click)="closeInfo()">Close</button></div>
+   </div>
+
   <table>
-    <tr><th>Char Base</th><th>Material</th><th>Estoque</th><th>Quant.</th><th>Stars</th><th>Edit</th></tr>
+    <tr><th>Char Base</th><th>Material</th><th>Quant.</th><th>Options</th></tr>
     <tr *ngFor="let item of items">
      <td id="charBase">{{ item.nmBase }}</td>
-     <td id="charMat">{{ item.nmMat }}</td>
-     <td>{{ item.qtCharMat }}</td>
-     <td>{{ item.qt_material }}</td>
+     <td id="charMat">{{ item.nmMat }}</td>     
+     <td>{{ item.qt_material }}</td>     
      <td>
-       <div>
-          <div *ngIf="item.qt_star>=1" id="star-{{item.nm_color_star}}"></div>
-          <div *ngIf="item.qt_star>=2" id="star-{{item.nm_color_star}}"></div>
-          <div *ngIf="item.qt_star>=3" id="star-{{item.nm_color_star}}"></div>
-          <div *ngIf="item.qt_star>=4" id="star-{{item.nm_color_star}}"></div>
-          <div *ngIf="item.qt_star>=5" id="star-{{item.nm_color_star}}"></div>
-          <div *ngIf="item.qt_star>=6" id="star-{{item.nm_color_star}}"></div>
-       </div>
+       <button ion-button color="primary" item-right (click)="viewEntry({ record: item })">Edit</button>
+       <button ion-button color="primary" item-right (click)="viewMore({ material: item })">View More</button>
      </td>
-     <!--td><div id="star-five"></div>{{ item.cd_star }}</td-->
-     <!--td>{{ item.cd_attribute }}</td-->     
-     <td>
-       <button ion-button color="primary" item-right (click)="viewEntry({ record: item })">View</button>
-     </td>
-
-     
-       <div id="infoMat">
-          <div id="nmMat">{{item.nmMat}}</div><br/>
-          <div id="imgMat">Foto Aqui</div><br/>
-          <div id="starMat">
-              <div *ngIf="item.qt_star>=1" id="star-{{item.nm_color_star}}"></div>
-              <div *ngIf="item.qt_star>=2" id="star-{{item.nm_color_star}}"></div>
-              <div *ngIf="item.qt_star>=3" id="star-{{item.nm_color_star}}"></div>
-              <div *ngIf="item.qt_star>=4" id="star-{{item.nm_color_star}}"></div>
-              <div *ngIf="item.qt_star>=5" id="star-{{item.nm_color_star}}"></div>
-              <div *ngIf="item.qt_star>=6" id="star-{{item.nm_color_star}}"></div>
-          </div>
-          <br/>
-          <div id="qtMat">{{ item.qtCharMat }}</div>
-       </div>        
-     
-        <div id="infoBase">
-           {{ item.nmBase }}
-        </div>  
-
    </tr>    
   </table>
+
+  
    
 </ion-content>

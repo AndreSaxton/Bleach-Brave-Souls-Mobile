@@ -17,6 +17,7 @@ export class HomePage {
    //public stars : any = [1,2,3];
    public stars : Array<any>=[];
    public a: Array<any>=[];
+   public mat: Array<any>=[];
 
    constructor(public navCtrl: NavController,
                public http   : HttpClient)
@@ -38,11 +39,11 @@ export class HomePage {
          //console.dir(data);
          this.items = data;
          //this.stars = this.items.cd_star;
-         console.log(this.items);
+         //console.log(this.items);
          for(let cont = 0; cont<this.items.length ;cont++){
           this.stars[cont] = this.items[cont].qt_star;
          }
-         console.log(this.stars);
+         //console.log(this.stars);
          
       },
       (error : any) =>
@@ -67,5 +68,16 @@ export class HomePage {
 
    addMaterials(){
       this.navCtrl.push('AddMaterialPage');
+   }
+
+   viewMore(material){
+     //console.log(material);
+     let nmMat = material.material;
+     this.mat = nmMat;
+
+     document.getElementById("infoMat").style.visibility = "visible";
+   }
+   closeInfo(){
+    document.getElementById("infoMat").style.visibility = "hidden";
    }
 }
