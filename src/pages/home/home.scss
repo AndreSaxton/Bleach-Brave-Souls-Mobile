@@ -1,13 +1,24 @@
 page-home {
 }
-table, td, th{
+td, th{
 	border: 1px solid black;background-color: #ffffff;
 }
 td{
 	text-align: center;
 	padding: 0px 2px;
 }
-
+td#charMat:hover ~ #infoMat,
+td#charBase:hover ~ #infoBase { visibility: visible;}
+#infoMat, #infoBase{
+	visibility: hidden;
+	position: relative;
+	top: 100px;
+}
+#imgMat{
+	height: 100px;
+	width: 100px;
+	background-color: cyan;
+}
 
 #star-Golden {
 	margin: 0px;
@@ -51,7 +62,6 @@ td{
 	transform:      rotate(-70deg);
 	content: '';
  }
-
  #star-Purple {
 	margin: 0px;
 	position: relative;
